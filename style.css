@@ -1,0 +1,331 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --Soft-orange: hsl(35, 77%, 62%);
+  --Soft-red: hsl(5, 85%, 63%);
+  --Off-white: hsl(36, 100%, 99%);
+  --Grayish-blue: hsl(233, 8%, 79%);
+  --Dark-grayish-blue: hsl(236, 13%, 42%);
+  --Very-dark-blue: hsl(240, 100%, 5%);
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-size: 15px;
+  background-color: var(--Off-white);
+  padding: 14px 100px;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "head head head"
+    "sec sec art"
+    "foot foot foot";
+  gap: 20px;
+  max-width: 898px;
+  max-height: 600px;
+}
+main header {
+  grid-area: head;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+main header nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+main header nav ul {
+  display: flex;
+}
+main header nav ul::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  top: 0;
+  right: 0;
+  width: 215px;
+  height: 470px;
+  z-index: -1;
+}
+main header nav a {
+  margin-right: 20px;
+}
+main header nav a:hover {
+  color: var(--Soft-red);
+}
+main .one {
+  grid-area: sec;
+}
+main .one .bright img {
+  width: 100%;
+}
+.one .bright div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 540px;
+}
+.one .bright div h1 {
+  color: var(--Very-dark-blue);
+  font-size: 30px;
+  font-weight: 800;
+  max-width: 207px;
+}
+.one .bright div p {
+  color: var(--Dark-grayish-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  line-height: 1.2;
+  max-width: 313px;
+}
+.one .bright div p a {
+  background-color: var(--Soft-red);
+  color: var(--Off-white);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  padding: 10px 15px;
+  font-size: 10px;
+  position: relative;
+  top: 27px;
+}
+.one .bright div p a:hover {
+  background-color: var(--Very-dark-blue);
+  color: var(--Off-white);
+}
+
+main article {
+  grid-area: art;
+  padding: 20px;
+  background-color: var(--Very-dark-blue);
+}
+article h1 {
+  color: var(--Soft-orange);
+  font-size: 30px;
+  font-weight: 700;
+}
+article div:not(:last-child) {
+  border-bottom: 1px solid var(--Dark-grayish-blue);
+}
+article div:not(:first-child) {
+  margin-top: 20px;
+}
+article div a {
+  color: var(--Off-white);
+  display: block;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+article div a:hover {
+  color: var(--Soft-orange);
+}
+article div p {
+  color: var(--Grayish-blue);
+  margin-top: 0;
+}
+main .two {
+  grid-area: foot;
+  display: flex;
+}
+main .two div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+main .two div img {
+  width: 25%;
+}
+.two div section h1 {
+  margin: 7px 0px;
+  font-size: 25px;
+  color: var(--Grayish-blue);
+}
+.two div section a {
+  display: block;
+  width: fit-content;
+  color: var(--Very-dark-blue);
+  font-weight: 700;
+}
+.two div section a:hover {
+  color: var(--Soft-red);
+}
+.two div section p {
+  margin: 6px 0px;
+  color: var(--Dark-grayish-blue);
+}
+footer {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 15px;
+}
+footer a {
+  color: hsl(228, 45%, 44%);
+}
+@media (max-width: 375px) {
+  body {
+    padding: 23px 20px;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main header .mnue {
+    display: flex;
+    position: absolute;
+    right: 30px;
+    top: 37px;
+  }
+  main header nav ul {
+    display: none;
+    padding-top: 125px;
+  }
+  main header nav ul a {
+    margin-top: 15px;
+    color: var(--Very-dark-blue);
+    font-weight: 400;
+    position: relative;
+    left: 145px;
+    width: fit-content;
+  }
+  main header nav .mnue:hover + ul {
+    display: flex;
+    flex-direction: column;
+    background-color: #333333ad;
+    position: absolute;
+    top: -15px;
+    right: 0;
+    width: 100%;
+    height: 1568px;
+    z-index: 3;
+  }
+  main header ul .close {
+    display: flex;
+    position: absolute;
+    right: 30px;
+    top: 37px;
+  }
+  .one .bright .des {
+    display: none;
+  }
+  .one .bright .mob {
+    display: flex;
+  }
+  .one .bright div {
+    flex-direction: column;
+  }
+  .one .bright div h1 {
+    position: relative;
+    right: 44px;
+  }
+  .one .bright div p {
+    margin-top: 0;
+  }
+  .one .bright div p a {
+    margin-bottom: 30px;
+  }
+  main .two {
+    flex-direction: column;
+  }
+  main .two div {
+    margin-bottom: 15px;
+  }
+  main .two div img {
+    width: 30%;
+  }
+  footer {
+    margin-top: 910px;
+  }
+}
+@media (min-width: 376px) and (max-width: 875px) {
+  body {
+    padding: 23px 20px;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main header .mnue {
+    display: flex;
+    position: absolute;
+    right: 30px;
+    top: 37px;
+  }
+  main header nav ul {
+    display: none;
+    padding-top: 125px;
+  }
+  main header nav ul a {
+    margin-top: 15px;
+    color: var(--Very-dark-blue);
+    font-weight: 400;
+    position: relative;
+    left: 185px;
+    width: fit-content;
+  }
+  main header nav .mnue:hover + ul {
+    display: flex;
+    flex-direction: column;
+    background-color: #333333ad;
+    position: absolute;
+    top: -15px;
+    right: 0;
+    width: 100%;
+    height: 1568px;
+    z-index: 3;
+  }
+  main header ul .close {
+    display: flex;
+    position: absolute;
+    right: 30px;
+    top: 37px;
+  }
+  .one .bright .des {
+    display: none;
+  }
+  .one .bright .mob {
+    display: flex;
+  }
+  .one .bright div {
+    flex-direction: column;
+  }
+  .one .bright div h1 {
+    position: relative;
+    right: 44px;
+  }
+  .one .bright div p {
+    margin-top: 0;
+  }
+  .one .bright div p a {
+    margin-bottom: 30px;
+  }
+  main .two {
+    flex-direction: column;
+  }
+  main .two div {
+    margin-bottom: 15px;
+  }
+  main .two div img {
+    width: 30%;
+  }
+  footer {
+    margin-top: 986px;
+  }
+}
